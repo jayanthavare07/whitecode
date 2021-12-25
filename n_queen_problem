@@ -1,0 +1,138 @@
+
+//Code for N-Queen Problem using Backtracking
+
+#define N 9          // Initialize the size
+#include <stdbool.h>
+#include <stdio.h>
+
+
+int Queen(int chess[N][N],int row) 
+{
+
+int i,j,k,l,x,y,z;
+if(row==N)
+return 0;
+x: {
+
+ for(i=0;i<N;i++) 
+ {
+    if(row==N-1 && chess[row][i]==0 )
+    {
+      chess[row][i]=1;
+      return (100);
+    }
+    
+   if(chess[row][i]==0)
+   {
+    chess[row][i]=1;
+    y=i;
+    
+      if(i>0 && chess[row][i-1]==1)
+         chess[row][i-1]=row+99;
+         
+     for(j=row+1;j<N;j++)
+     {
+       if(chess[j][i]==0 || chess[j][i]==1)
+            chess[j][i]=row+100;
+     }
+     
+    for(j=row+1,k=i+1;j<N,k<N;j++,k++)
+    {
+        if(chess[j][k]==0 || chess[j][k]==1)
+            chess[j][k]=row+100;
+    }
+    
+     if(i>0)
+     {
+         for(j=row+1,k=i-1;j<N,k>=0;j++,k--) 
+           {
+              if(chess[j][k]==0 || chess[j][k]==1)
+                   chess[j][k]=row+100;
+           }
+      
+     }
+ break; 
+ }
+ 
+ else if (i==N-1 && chess[row][i]!=0)
+ {
+      for(i=0;i<N;i++)
+         {
+           if(chess[row][i]==1)
+              chess[row][i]=0; 
+         }
+         
+ return (row-1);
+ }
+ 
+ }
+ 
+z=Queen(chess,row+1);
+if(z==row) 
+{
+     for(j=row+1;j<N;j++)
+         {
+           if(chess[j][y]==row+100)
+                   chess[j][y]=0;
+         }
+         
+     for(j=row+1,k=y+1;j<N,k<N;j++,k++)
+         {
+            if(chess[j][k]==row+100)
+                chess[j][k]=0;
+         }
+         
+ if(y>0)
+ {
+       for(j=row+1,k=y-1;j<N,k>=0;j++,k--)
+         {
+            if(chess[j][k]==row+100)
+                chess[j][k]=0;}
+         }
+         
+ goto x; 
+ }
+ 
+ }
+return 100;
+}
+
+
+//Driver code
+int main() 
+{
+int chess[N][N]={ {0,0,0,0},
+                  {0,0,0,0},
+                  {0,0,0,0},
+                  {0,0,0,0} 
+                };
+                
+Queen(chess,0);
+
+for(int i=0;i<N;i++)
+{
+  for(int j=0;j<N;j++)
+   {
+     if(chess[i][j]==1)
+      {
+        for(int k=0;k<j;k++)
+          chess[i][k]=0;
+      }
+}
+}
+
+for(int i=0;i<N;i++)
+{
+   for(int j=0;j<N;j++)
+     {
+      if(chess[i][j]!=1)
+         printf("%d ",0);
+      else
+         printf("%d ",chess[i][j]);
+     }
+     
+printf("\n");
+}
+
+return 0; 
+}
