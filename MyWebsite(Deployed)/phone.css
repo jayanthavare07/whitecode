@@ -1,0 +1,22 @@
+
+#navbar{
+    flex-direction: column;
+    align-items: center;
+}
+#logo{
+    margin-top: 20px;
+}
+.link{
+    margin-top: 20px;
+
+}
+.contact{
+    margin-top: 20px;
+}
+.anime{
+    display: none;
+}
+#para{
+    margin-left: 20vw;
+    margin-right:20vw;
+}

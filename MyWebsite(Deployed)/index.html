@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Web Services</title>
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="phone.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav id="navbar">
+       <div id="logo">
+           <img src="image/logo.png" alt="loading....">
+       </div>
+       <div class="link">
+           <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="contact.html">Contact Us</a>
+                <!-- <div class="contactdd">
+                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=website77biz@gmail.com&tf=cm" target="blank">
+                        website77biz@gmail.com</a>
+                </div> -->
+           </li>
+           <li><a href="about.html">About Us</a></li>
+           <li><a href="#">Another Services</a>
+            <div class="submenu1">
+                    <ul><a href="#">App Development</a></ul>   
+                    <ul><a href="#">Software Services</a></ul>
+            </div>    
+           </li>
+           </ul>
+        </div>
+        <div class="contact">
+            <a href="https://mail.google.com/mail/u/0/?fs=1&to=website77biz@gmail.com&tf=cm" target="blank">
+                website77biz@gmail.com</a>
+                <!-- https://mail.google.com/mail/?view=cm&fs=1&to=website77biz@gmail.com -->
+        </div>
+   </nav> 
+   <div class="content">
+    <h1>Web Services</h1>
+</div>
+   <div class="anime">
+       <div class="statictext"><span>I'm</span></div>
+       <ul class="dynamictext">
+           <li><span>WEB DEVELOPER</span></li>
+           <li><span>APP DEVELOPER</span></li>
+           <li><span>SOFTWARE DEVELOPER</span></li>
+           <li><span>FREELANCER</span></li>
+           <li style="color: red;"><span>JAYANT</span></li>
+       </ul>
+   </div>
+<div class="image-anime">
+   <div class="slider">
+       <div class="slides">
+           <input type="radio" name="radio-btn" id="radio1">
+           <input type="radio" name="radio-btn" id="radio2">
+           <input type="radio" name="radio-btn" id="radio3">
+
+       
+       <div class="slide first">
+           <img src="image/img10.jpg" alt="">
+       </div>
+       <div class="slide">
+        <img src="image/img9.jpg" alt="">
+       </div>
+       <div class="slide">
+        <img src="image/img11.jpg" alt="">
+       </div>
+       </div>
+       <!-- <div class="navigation-auto">
+           <div class="auto-btn1"></div>
+           <div class="auto-btn2"></div>
+           <div class="auto-btn3"></div>
+       </div> -->
+       <div class="navigation-manual">
+           <label for="radio1" class="manual-btn"></label>
+           <label for="radio2" class="manual-btn"></label>
+           <label for="radio3" class="manual-btn"></label>
+       </div>
+   </div>
+</div>
+    
+   <div id="para">
+       <p>Now world is going digital. In this Digitalization to grow buissness , it needs online presence.
+           We help people to develop and maintain responsive website services(a website which works smooth in all type of devices 
+           e.g. laptop , tab , mobile and every other device) . For our service : 
+           <a href="https://mail.google.com/mail/u/0/?fs=1&to=website77biz@gmail.com&tf=cm">Contact Us</a>.</p>
+   </div>
+   <div class="footer"><span>Copyright &#169; 2021 . All Rights Reserved .</span></div>
+   <script type="text/javascript">
+    var c=1;
+    setInterval(function(){
+        document.getElementById('radio' + c).checked = true;
+        c++;
+        if(c > 3){
+            c=1;
+        }
+    },5000);
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="phone.css">
+
+<style>
+#navbar{
+     
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+ #logo img{
+     height: 4em;
+     width: 4em;
+     
+}
+.link ul{
+    display: flex;
+}
+.link ul li{
+    list-style: none;
+    padding-left: 11vw;
+}
+.link a{
+    text-decoration: none;
+    color: black;
+}
+ .contact a{
+    text-decoration: none;
+     color: black;
+    margin-left: 7vw;
+}
+.content h1{
+    color: rgb(255, 123, 0);
+    text-align: center;
+    margin: 10px;
+}
+/* .contactdd{
+    display: none;
+}
+.link ul li:hover  .contactdd{
+    display: block;
+}
+.link ul li:hover  .contactdd a{
+    text-decoration: none;
+     color: black;
+    background-color: rgb(255, 123, 0);
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 100px;
+    padding: 7px;
+} */
+/*.link{
+    margin-left: 6em;
+    font-size: 1.5em;
+    
+}
+.link a{
+    text-decoration: none;
+    margin: 20px;
+}
+.link ul{
+    display: inline-flex;
+}
+.link ul li{
+    list-style: none;
+}  */
+.submenu1{
+    display: none;
+}
+.link ul li:hover  .submenu1{
+
+    display: block;
+    position: absolute;
+}
+.link ul li:hover  .submenu1 ul{
+    display: block;   
+    margin-top: 2px;
+    border: 2px solid black;
+    border-radius: 100px;
+    background-color: rgb(255, 123, 0);
+    padding: 7px;
+}
+.aboutdiv{
+    text-align: center;
+    border: 3px solid white; 
+    /*background-image : url("image/aboutimg.png");
+    background-repeat: no-repeat; 
+    background-size: 100vw 100%; */
+}
+
+.servicediv{
+display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ser{
+    background-image : url("image/aboutimg.png");
+    background-repeat: no-repeat; 
+    background-size: 100vw 100%;
+}
+
+.servicediv p{
+display: flex;
+  align-items: center;
+  justify-content: center;
+/*display : inline-block;*/
+border : 2px solid black;
+border-radius : 10%;
+width : 13vw;
+height : 20vh; 
+margin-right : 2.5vw;
+background-image : url("image/another.png");
+background-position: center;
+background-repeat: no-repeat; 
+background-size: 80% 100%;
+/*background-color: rgb(147, 145, 248);*/
+}
+
+
+.footer{
+   width:99.2%;
+    height: 40px;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.footer span{
+    color: white;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+       <div id="logo">
+           <img src="image/logo.png" alt="loading....">
+       </div>
+       <div class="link">
+           <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="contact.html">Contact Us</a>
+                <!-- <div class="contactdd">
+                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=website77biz@gmail.com&tf=cm" target="blank">
+                        website77biz@gmail.com</a>
+                </div> -->
+           </li>
+           <li><a href="#para">About Us</a></li>
+           <li><a href="#">Another Services</a>
+            <div class="submenu1">
+                    <ul><a href="#">App Development</a></ul>   
+                    <ul><a href="#">Software Services</a></ul>
+            </div>    
+           </li>
+           </ul>
+        </div>
+        <div class="contact">
+            <a href="https://mail.google.com/mail/u/0/?fs=1&to=website77biz@gmail.com&tf=cm" target="blank">
+                website77biz@gmail.com</a>
+                <!-- https://mail.google.com/mail/?view=cm&fs=1&to=website77biz@gmail.com -->
+        </div>
+   </nav> 
+   <div class="ser">
+   <div class="aboutdiv">
+   <h1 style="">ABOUT US</h1>
+   <br>
+   <p style="display : inline-block;background-color : white">
+    Since technology is incraesing fastly , every business need online presence</p>
+    <br>
+   <p style="display : inline-block;background-color : white">
+    We help businesses to establish online presence</p>
+   </div>
+   <hr style="width:50%;margin:0 auto;border: 2px solid red;">
+   
+   <h1 style="text-align: center;">Services</h1>
+   
+   <div class="servicediv">
+   <p style="">Web services</p>
+   <p>App services</p>
+   <p>Software services</p>
+   
+   </div>
+   <br><br><br>
+   </div>
+<div class="footer"><span>Copyright &#169; 2021 . All Rights Reserved .</span></div>
+</body>
+</html>
