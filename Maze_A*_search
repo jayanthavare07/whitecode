@@ -1,0 +1,179 @@
+//Solving Maze Problem Using A* Algorithm
+
+#include<iostream>
+using namespace std;
+
+
+//Structure declaration for priority queue
+struct Node{
+ char node;  //node-name
+ int f;      //f(node) 
+ struct Node* next;  //pointer to next node
+};
+
+
+//declaration of priority queue pointer (Global Refeerence)
+struct Node* head;
+
+
+
+//Function to insert elements in priority queue
+char push(char state , int fn)
+{
+ struct Node* temp = new Node();
+ struct Node* prev= new Node();
+ struct Node* newnode = new Node();
+ 
+newnode->node = state;
+newnode->f = fn;
+newnode->next = NULL;
+ 
+//Initialize head pointer
+	if(head==NULL)
+	  head=newnode;
+	  
+temp=head;	
+prev=temp;	  
+while(newnode->f > temp->f && temp->next != NULL) 
+	{	
+	 prev=temp;   
+	 temp=temp->next;	 
+	}
+	
+	
+	
+   //if f(n) of new state is less than latest frontier
+	  if(temp->f > newnode->f)
+	  {  
+   	newnode->next = temp;
+   	
+   	if(head==temp)
+   	   head=newnode;
+   	else
+	     prev->next = newnode;
+	   
+	   return head->node;
+	  }
+	  
+	  
+	  
+	  //if f(n) of new state is     grater than all previous
+      if(temp->next == NULL &&  temp!=newnode)
+	      {
+	          temp->next = newnode;	   
+	      }
+	  
+ return head->node;
+}
+
+
+
+
+
+//driver code
+int main()        
+{
+	int i=0,j=0,k,l,nodes,count=0;
+	char current;
+	cout<<"Enter total no. of nodes : ";
+  cin>>nodes;
+ 
+ int matrix[nodes][nodes],h[nodes],f[nodes];
+ char explored[nodes], names[nodes];
+ 
+
+//Inserting values of nodes
+ for(i=0;i<nodes;i++)
+ {
+   names[i]=65+i;
+   explored[i]=0;
+ }
+ 
+//Store Edge Costs       
+  for(i=0;i<nodes;i++)
+    for(j=0;j<nodes;j++)
+     {
+       cout<<"Enter edge cost of the edge "<<names[i]<<" and "<< names[j]<<": ";
+        cin>>matrix[i][j];
+     } 
+     
+     
+for(i=0;i<nodes;i++)     
+  {
+    cout<<"Enter heuristic value of "<<names[i]<<" : ";
+    cin>>h[i];
+  }
+ 
+     
+         
+// process of inserting in priority queue and explored array starts here  
+f[0]=  h[0]+matrix[0][1];       
+current=push(names[0],f[0]);    
+int index=0;  
+i=0;
+while(head != NULL)  
+ {   
+   //insert node in explored array
+   explored[i]=head->node;
+   
+   
+ //Check whether explored node is goal node   
+ if(head->node == names[nodes-1])
+     {
+        break;
+     }
+   
+   if(head->next != NULL)
+       head=head->next;
+   else{
+       head = NULL;     
+       }
+   
+
+     
+  for(j=0;j<nodes;j++)
+    {
+     //insert neighbouring nodes in frontier
+     if(matrix[index][j]!=0)
+     {
+      
+        //check whether node is alreay explored
+        for(int m=0;m<nodes;m++)
+           if(matrix[index][j] ==  explored[m])
+                   count = 1;
+     
+        if(count==0)
+         {
+          f[j]=h[j]+matrix[index][j];      
+          current = push(names[j],  
+          f[j] +f[index]- h[index]);  
+         }
+   
+   count = 0;
+       } 
+        
+    }  
+     
+ for(k=0;k<nodes;k++)
+     if(names[k]==current)
+      {
+        index=k;
+        break;
+      }
+         
+   i++;    
+ }  
+ 
+ char nothing = 0; 
+	i=0; 
+  
+  //Printing the shortest possible path
+  cout<<"Shortest possible path : ";
+	while(explored[i]!= nothing) 
+	  {
+    cout<<explored[i]<<" "; 
+    i++;
+   }     
+       
+	return 0;
+}
